@@ -89,6 +89,7 @@ class App extends Component {
     this.setState({ input: event.target.value })
   }
   onButtonSubmit = () => {
+    this.setState({ box: [] }) // this is to reset the face box, so previous boxes don't display
     this.setState({ imageUrl: this.state.input });
     fetch('http://localhost:3000/imageAPI', {
       method: 'post',
